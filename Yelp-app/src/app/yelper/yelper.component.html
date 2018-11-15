@@ -1,9 +1,10 @@
-<div >
+<div class="pancake">
   <form (ngSubmit)="getItems()" [formGroup]="yelpForm">
     <label>City</label>
-    <input formControlName="city" placeholder="enter city" />
+    <input formControlName="city" placeholder="City of Choice"/>
     <label>State</label>
     <select formControlName="state">
+      <option value="null">Pick a State</option>
       <option value="Alabama">Alabama</option>
       <option value="Alaska">Alaska</option>
       <option value="Arizona">Arizona</option>
@@ -54,6 +55,7 @@
       <option value="Wyoming">Wyoming</option>
     </select>
     <select formControlName="prices">
+        <option value="null">Pick a Range</option>
         <option value="1">$</option>
         <option value="2">$$</option>
         <option value="3">$$$</option>
@@ -81,9 +83,8 @@
           <div *ngIf='food.rating === 1.5'><img src="../../assets/yelp/regular_1.5.png" /></div>
           <div *ngIf='food.rating === 1'><img src="../../assets/yelp/regular_1.png" /></div>
           <div *ngIf='food.rating === 0'><img src="../../assets/yelp/regular_0.png" /></div>
-        
       </div>
-      <img src="{{food.image_url}}" width="20%" height="20%" />
+      <img src="{{food.image_url}}" width="25%" height="25%" />
     </div>
   </div>
 </div>
